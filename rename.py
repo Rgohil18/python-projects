@@ -3,7 +3,7 @@ import sys
 import glob
 import shutil
 
-dataset_path = r'/Users/vijayrajgohil/Desktop/python_ravi/Animals'
+dataset_path = r'./Animals'
 
 folder_list = os.listdir(dataset_path)
 
