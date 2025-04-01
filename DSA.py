@@ -81,18 +81,63 @@ class Linkedlist:
         for _ in range(index):
             current = current.next
         return current.value
+    def popfirst(self):
 
+      if self.head!=None:
+            pop_this = self.head
+            self.head = self.head.next
+            pop_this.next = None
+            self.length = self.length-1
+            return pop_this.value
+      else:
+          print("linkedlist is empty")
+    def poplast(self):
+        last_pop = self.tail
+        temp =self.head
+        while temp.next is not self.tail:
+            temp = temp.next
+        temp=self.tail
+        temp.next=None
+        self.length = self.length -1
+    def all_nodes(self):
+        temp1 = self.head
+        temp2 = self.tail
+        temp1.next = None
+        temp2.next = None
+        temp1.value = None
+        temp2.value = None
 
+    def remove(self,index):
 
+        temp_node = self.head
+        for _ in range(index):
+            temp_node=temp_node.next
+        temp_node2 = self.head
 
-
-
-# ✅ Testing the Linked List
+        for _ in range(index-1):
+            temp_node2 = temp_node2.next
+        temp_node2.next = temp_node.next
+        temp_node.next = None
+        return temp_node.value
+    def deleteall(self):
+        self.head=None
+        self.tail=None
+        self.length=0
+ # ✅ Testing the Linked List
 new_linked_list = Linkedlist()
 new_linked_list.append(10)
-new_linked_list.append(20)
 new_linked_list.append(30)
-
 print(new_linked_list)
 print(new_linked_list.Get(2))
+print(new_linked_list.popfirst())
+print(new_linked_list.poplast())
+print(new_linked_list)
+print(new_linked_list.all_nodes())
+print(new_linked_list)
+print(new_linked_list.remove(0))
+
+# import numpy as np
+
+
+
 
