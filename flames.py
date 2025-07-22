@@ -1,24 +1,34 @@
-class basic:
-    def __init__(self,name,gender):
-        self.name = name
-        self.gender= gender
-        print(f"my name is {self.name}"
-              f" i am {gender}")
+class stack :
+    def __init__(self):
+        self.list = []
 
-class details(basic):
-    def physical_measure(self,height,weight):
-        print(f"my height is {height},my weight is {weight}")
+    def __str__(self):
+        values = [str(x) for x in reversed(self.list)]
+        return '\n'.join(values)
 
-class class_details(details):
-    def __init__(self,class1,div):
-        print(f"i am studying in class{class1}, division {div}")
-        super(basic).__init__()
-        super().physical_measure()
+    def isEmpty(self):
+        if self.list == []:
+            return "the stack is empty"
+        else:
+            return "the stack is not empty"
 
+    def push(self,value):
+        self.list.append(value)
 
-x = basic("ravi","male")
-x = details()
-x.physical_measure("5'7","54")
-x = class_details("12th","h")
+    def pop(self):
+        self.list.pop()
+        return self.list
+    def peek(self):
+        return self.list[len(self.list)-1]
 
+stack1 = stack()
+stack1.push(10)
+print(stack1)
+stack1.push(20)
+print(stack1)
+print(stack1.pop())
+print(stack1)
+stack1.push(30)
+print(stack1)
+print(stack1.peek())
 
