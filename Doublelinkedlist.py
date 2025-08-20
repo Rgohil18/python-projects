@@ -1,31 +1,21 @@
-class Node:
-    def __init__(self,value):
-        self.value = value
-        self.next = None
-        self.prev = None
-class DLL:
-    def __init__(self,value):
-        self.head = head
-        self.tail = tail
-    def __str__(self):
+class Tree:
+    def __init__(self,data):
+        self.data = data
+        self.left = None
+        self.right = None
+    def preordertraverse(self,rootnode):
+        if not rootnode:
+            return
+        print(rootnode.data)
+        self.preordertraverse(rootnode.left)
+        self.preordertraverse(rootnode.right)
+        # create nodes
+root = Tree(1)
+root.left = Tree(2)
+root.right = Tree(3)
+root.left.left = Tree(4)
 
-        return f"{self.prev}<--{self.value}-->{self.next}"
+# call the traversal
+root.preordertraverse(root)
 
-    def append(self,value):
-        new_node = Node(value)
-        new_node.prev = self.tail
-        self.tail.next = new_node
-        new_node.next = None
-    def prepend(self,value):
-        new_node = Node(value)
-        new_node.next = self.head
-        self.head.prev = new_node
-        self.head=new_node
-
-
-
-
-
-node = Node(10)
-print(node)
 
